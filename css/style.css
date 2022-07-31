@@ -1,0 +1,489 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+	font-family: 'Montserrat';
+	padding: 0;
+	margin: 0;
+}
+
+.material-symbols-outlined,
+.material-symbols-sharp,
+.material-symbols-rounded,
+img {
+	user-select: none;
+	-webkit-user-drag: none;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+body {
+	background: rgb(22, 22, 22);
+	color: white;
+	overflow-x: hidden;
+}
+
+
+main {
+	padding: 0px 26px;
+	margin-bottom: 160px;
+}
+
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 20px 26px;
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	z-index: 10;
+	background-color: rgb(18, 18, 18);
+}
+
+#backforwardnav {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+#hfnav,
+#hbnav {
+	cursor: not-allowed;
+	width: 32px;
+	height: 32px;
+	align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 16px;
+	text-align: center;
+	padding: 2px;
+	border-radius: 50%;
+	background-color: rgb(0, 0, 0);
+}
+
+#hbnav span {
+	margin-left: 8px;
+}
+
+#hfnav {
+	margin-left: 12px;
+}
+
+#headerpmenuwrap {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	background-color: rgb(0, 0, 0);
+	padding: 4px;
+	border-radius: 40px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.headerpmenu {
+	display: flex;
+	align-items: center;
+}
+
+.headerpmenu img {
+	width: 30px;
+	border-radius: 15px;
+	margin: 0px 6px;
+}
+
+.hpname {
+	margin: 0px 6px;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.playlists {
+	margin: 40px 0px;
+}
+
+#playlistscroll::-webkit-scrollbar {
+	width: 0px;
+	height: 0px;
+}
+
+.wplaylists {
+	margin-top: 120px;
+}
+
+#playlistscroll {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	overflow-x: scroll;
+}
+
+.wplaylistscroll {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+
+.wish {
+	font-size: 22px;
+	font-weight: 700;
+	margin: 30px 0px;
+}
+
+.playlistcard {
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+	position: relative;
+	padding: 16px;
+	cursor: pointer;
+	width: 180px;
+	height: 280px;
+	box-shadow: 0px 0px 6px rgba(24, 24, 24, 0.3);
+	background-color: rgb(30, 30, 30);
+	border-radius: 10px;
+	margin-right: 26px;
+	transition: .5s;
+}
+
+.playlistimg {
+	width: 180px;
+	border-radius: 6px;
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.7);
+}
+
+.abplaylistimg {
+	width: 46px;
+	border-radius: 4px;
+	position: absolute;
+	left: 12px;
+	bottom: 110px;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.playlistname {
+	margin: 18px 0px;
+	margin-bottom: 9px;
+	font-weight: 600;
+	font-size: 15px;
+}
+
+.playlistdetails {
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 13px;
+	line-height: 22px;
+	width: 180px;
+}
+
+.playlistcard:hover {
+	background-color: rgba(146, 146, 146, 0.2);
+	transition: .4s;
+}
+
+.playlistplaybtn {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background-color: rgb(30, 215, 96);
+	font-size: 32px;
+	position: absolute;
+	outline: none;
+	border: none;
+	bottom: 95px;
+	right: 30px;
+	opacity: 0;
+	cursor: default;
+}
+
+.playlistcard:hover .playlistplaybtn {
+	opacity: 1;
+	transition: .3s;
+	bottom: 130px;
+	right: 30px;
+}
+
+.playlistplaybtn:hover {
+	width: 50px;
+	height: 50px;
+	transition: none;
+}
+
+.wplaylistcardwrap {
+	display: flex;
+	flex-direction: row;
+}
+.wwish {
+	font-size: 28px;
+	margin-bottom: 40px;
+}
+
+
+.wish,
+.wwish {
+	white-space: nowrap;
+}
+
+.wplaylistcard {
+	flex-direction: row;
+	align-items: center;
+	height: 84px;
+	border-radius: 5px;
+	flex-grow: 1;
+	padding: 0px;
+	margin-bottom: 16px;
+	background-color: rgba(255, 255, 255, 0.071);
+}
+
+.wplaylistimg {
+	width: 84px;
+	border-radius: 0px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	box-shadow: 8px 0px 4px rgba(0, 0, 0, 0.2);
+}
+
+.wplaylistname {
+	margin: 0px;
+	margin-left: 16px;
+}
+
+.wplaylistplaybtn {
+	position: absolute;
+	top: 18px;
+	left: 286px;
+	
+}
+
+.wplaylistcard:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.wplaylistcard:hover .wplaylistplaybtn {
+	position: absolute;
+	opacity: 1;
+	transition: .3s;
+	top: 18px;
+	left: 286px;
+}
+
+.artistimg {
+	border-radius: 800px
+}
+
+.artistscard {
+	height: 260px;
+}
+
+@media (max-width: 800px) {
+	main {
+		padding: 0px 18px;
+	}
+	header {
+		display: none;
+	}
+	.wplaylists{
+		margin-top: 0px;
+	}
+	.playlists {
+		margin-right: -18px;
+		margin: -10px 0px;
+	}
+	.playlistcard {
+		
+		margin-right: 20px;
+		margin-bottom: 18px;
+		padding: 15px;
+	}
+	.playlistname {
+		font-size: 14px;
+	}
+	.playlistdetails {
+		font-size: 12px;
+		max-width: 145px;
+	}
+	#playlistscroll{
+		margin-left: -18px;
+		margin-right: -18px;
+	}
+	.abplaylistimg {
+		
+		left: 12px;
+		
+	}
+	.playlistplaybtn {
+		display: none;
+	}
+	.wwish {
+		font-size: 20px;
+		margin-top: 50px;
+		margin-bottom: 26px;
+	}
+	.wplaylistcard {
+		max
+		height: 60px;
+	}
+	.wplaylistimg {
+		width: 60px;
+	}
+	.wplaylistplaybtn {
+		display: none;
+	}
+	.wish {
+		font-size: 20px;
+	}
+	.wplaylistcard {
+		padding: 0px;
+	}
+	.fplaylistcard {
+		margin-left: 18px;
+	}
+	.wplaylistimg {
+		width: 84px;
+	}
+}
+
+@media (max-width: 600px) {
+	.wplaylists{
+		width: auto;
+		margin-top: 0px;
+	}
+	.playlists {
+		margin-right: -18px;
+		margin: -10px 0px;
+	}
+	.playlistcard {
+		background: transparent;
+		margin-right: 20px;
+		margin-bottom: 18px;
+		padding: 0px;
+	}
+	.playlistimg  {
+		border-radius: 0px;
+		box-shadow: none;
+	}
+	.playlistdetails {
+		font-size: 14px;
+		max-width: 170px;
+	}
+	#playlistscroll{
+		margin-left: -18px;
+		margin-right: -18px;
+	}
+	.abplaylistimg {
+		
+		left: 12px;
+		
+	}
+	.playlistplaybtn {
+		display: none;
+	}
+	.wwish {
+		font-size: 20px;
+		margin-top: 50px;
+		margin-bottom: 26px;
+	}
+	.wplaylistcard {
+		background-color: rgba(255, 255, 255, 0.071);
+		height: 60px;
+	}
+	.wplaylistimg {
+		width: 60px;
+	}
+	.wplaylistplaybtn {
+		display: none;
+	}
+	.wish {
+		font-size: 20px;
+		
+	}
+	.artistscard {
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+	.artistimg {
+		border-radius: 100px;
+	}
+	.wplaylistcard {
+		padding: 0px;
+	}
+	.abplaylistimg {
+		display: none;
+	}
+}
+
+@media (max-width: 500px) {
+	
+	main {
+		padding-right: 0px;
+	}
+	.playlistcard {
+		width: 130px;
+		background-color: transparent;
+		box-shadow: none;
+		margin-right: 12px;
+		height: 230px;
+	}
+	.playlistcard:hover {
+		background-color: transparent;
+	}
+	.playlistimg {
+		width: 130px;
+	}
+	.playlistdetails {
+		font-size: 11px;
+		width: 100%;
+	}
+	.playlistname {
+		font-size: 11px;
+		width: 100%;
+		white-space: nowrap;
+		margin-top: 15px;
+		margin-bottom: 6px;
+	}
+	.wish {
+		font-size: 15px;
+		margin-top: 28px;
+		margin-bottom: 22px;
+	}
+	.podplaylistimg {
+		border-radius: 12px;
+	}
+	.wplaylists {
+		margin-top: 20px;
+	}
+	.wplaylistcard {
+		width: 100%;
+		background-color: rgba(255, 255, 255, 0.071);
+		height: 44px;
+		overflow: hidden;
+		margin-bottom: 8px;
+		overflow: hidden;
+	}
+	.wplaylistimg{
+		width: 44px;
+		
+	}
+	.wplaylistname {
+		font-size: 10px;
+		margin: 8px;
+	}
+	.wplaylistcard:hover {
+		background-color: rgba(255, 255, 255, 0.071);
+	}
+	.playlists {
+		overflow-x: hidden;
+	}
+	.artistscard {
+		height: 200px;
+		margin-top: 0px;
+		margin-bottom: 0px;
+	}
+}
