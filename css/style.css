@@ -25,13 +25,13 @@ img {
 body {
 	background: rgb(22, 22, 22);
 	color: white;
+	margin-bottom: 160px;
 	overflow-x: hidden;
 }
 
 
 main {
 	padding: 0px 26px;
-	margin-bottom: 160px;
 }
 
 header {
@@ -236,10 +236,20 @@ header {
 	height: 84px;
 	border-radius: 5px;
 	flex-grow: 1;
+	max-width: 360px;
 	padding: 0px;
 	margin-bottom: 16px;
 	background-color: rgba(255, 255, 255, 0.071);
 }
+
+.opapwplaylistcardwrap {
+	display: none;
+}
+
+/* .opwplaylistscard,
+.apwplaylistscard {
+	display: none;
+} */
 
 .wplaylistimg {
 	width: 84px;
@@ -289,7 +299,7 @@ header {
 	align-items: center;
 	flex: 1;
 	width: 100%;
-	height: 74px;
+	height: 60px;
 	padding: 14px;
 	background-color: rgb(24, 24, 24);
 	border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -393,7 +403,7 @@ header {
 
 .timetotalbar {
 	position: relative;
-	width: 500px;
+	width: 420px;
 	height: 4px;
 	border-radius: 3px;
 	background-color: rgb(123, 123, 123);
@@ -401,7 +411,7 @@ header {
 
 .timedonebar {
 	position: absolute;
-	width: 200px;
+	width: 180px;
 	height: 4px;
 	top: 0px;
 	left: 0px;
@@ -426,7 +436,129 @@ header {
 	font-weight: 500;
 }
 
+#mobilefooter {
+	display: none;
+	flex-direction: column;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	position: fixed;
+	background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.7), rgba(0,0,0,0.7), rgba(0,0,0,0.7), rgba(0,0,0,0.9), rgba(0,0,0,0.9), rgba(0,0,0,0.9), rgba(0,0,0,1), rgba(0,0,0,1));
+}
 
+
+
+.playbarmobile {
+	display: flex;
+	align-items: center;
+	height: 46px;
+	border-radius: 7px;
+	padding: 8px;
+	width: auto;
+	margin: 0px 10px;
+	position: relative;
+	margin-bottom: 4px;
+	background-color: rgba(60,56,92, 1);
+}
+
+.songimg {
+	display: flex;
+	align-items: center;
+}
+
+.songimg img {
+	width: 46px;
+	border-radius: 6px;
+}
+
+.artistnamesong {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	margin-left: 14px;
+}
+
+.songnamem {
+	font-size: 13px;
+	font-weight: 600;
+	margin-bottom: 3px;
+}
+
+.artistnamem {
+	font-size: 12px;
+	font-weight: 500;
+	color: rgba(255, 255, 255, 0.832);
+}
+
+.playbarcontrols {
+	display: flex;
+	align-items: center;
+}
+
+
+#devicesm,
+#favm,
+#playm {
+	font-size: 24px;
+	margin: 0px 8px;
+}
+
+#playm {
+	font-size: 32px;
+	margin: 0px 2px;
+}
+
+.progressbartotal {
+	position: absolute;
+	height: 2px;
+	background-color: rgba(255, 255, 255, 0.5);
+	bottom: 0;
+	width: 96%;
+	border-radius: 3px;
+}
+
+.progressbardone {
+	height: 2px;
+	background-color: rgba(255, 255, 255, 0.8);
+	bottom: 0;
+	width: 20%;
+}
+
+.footernav {
+	display: flex;
+	justify-content: space-evenly;
+	padding: 10px 14px;
+}
+
+.homenav,
+.searchnav,
+.libnav {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.homenavm,
+.searchnavm,
+.libnavm {
+	font-size: 28px;
+	font-size: 500;
+	margin-bottom: 4px;
+}
+
+.hometextm,
+.searchtextm,
+.libtextm {
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.searchnavm,
+.libnavm,
+.searchtextm,
+.libtextm {
+	color: rgba(255, 255, 255, 0.75);
+}
 
 @media (max-width: 800px) {
 	main {
@@ -501,6 +633,14 @@ header {
 }
 
 @media (max-width: 600px) {
+	.opapwplaylistcardwrap {
+		display: flex;
+	}
+	
+	.opwplaylistcard,
+	.apwplaylistcard {
+		display: none;
+	}
 	.wplaylists{
 		width: auto;
 		margin-top: 0px;
@@ -572,7 +712,7 @@ header {
 	}
 }
 
-@media (max-width: 500px) {
+@media (max-width: 470px) {
 	
 	main {
 		padding-right: 0px;
@@ -661,5 +801,8 @@ header {
 @media (max-width: 700px) {
 	#desktopfooter {
 		display: none;
+	}
+	#mobilefooter {
+		display: flex;
 	}
 }
