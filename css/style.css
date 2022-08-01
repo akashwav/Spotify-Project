@@ -281,9 +281,156 @@ header {
 	height: 260px;
 }
 
+#desktopfooter {
+	position: fixed;
+	bottom: 0px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex: 1;
+	width: 100%;
+	height: 74px;
+	padding: 14px;
+	background-color: rgb(24, 24, 24);
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.albumsongdetails {
+	display: flex;
+	align-items: center;
+}
+
+.coverpic {
+	display: flex;
+	align-items: center;
+	margin-right: 14px;
+}
+
+.coverpic img{
+	width: 60px;
+}
+
+.songnameartist {
+	display: flex;
+	flex-direction: column;
+	margin-right: 28px;
+}
+
+.songname {
+	font-size: 14px;
+	font-weight: 500;
+	margin-bottom: 2px;
+}
+
+.songartist {
+	font-size: 11px;
+	font-weight: 400;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+#playbardesk-fav,
+#playbardesk-pip {
+	font-size: 22px;
+	font-weight: 500;
+	margin-right: 10px
+}
+
+.playcontrols {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	
+}
+
+.maincontrols {
+	margin-bottom: 10px;
+	display: flex;
+	align-items: center;
+}
+
+#playbardesk-shuffle,
+#playbardesk-prev,
+#playbardesk-pause,
+#playbardesk-next,
+#playbardesk-repeat {
+	font-size: 26px;
+	margin: 0px 10px;
+	font-weight: 500;
+}
+
+#playbardesk-shuffle,
+#playbardesk-repeat {
+	font-size: 24px;
+}
+
+#playbardesk-prev,
+#playbardesk-next {
+	color: rgba(255, 255, 255, 0.869);
+	font-weight: 600;
+}
+
+#playbardesk-pause {
+	background-color: white;
+	color: black;
+	font-weight: 500;
+	padding: 4px;
+	border-radius: 50px;
+}
+
+.songdurationbar {
+	display: flex;
+	align-items: center;
+	position: relative;
+	margin-top: 3px;
+}
+
+.timedone,
+.timetotal {
+	font-size: 13px;
+	margin: 0px 10px;
+}
+
+
+.timetotalbar {
+	position: relative;
+	width: 500px;
+	height: 4px;
+	border-radius: 3px;
+	background-color: rgb(123, 123, 123);
+}
+
+.timedonebar {
+	position: absolute;
+	width: 200px;
+	height: 4px;
+	top: 0px;
+	left: 0px;
+	border-radius: 3px;
+	background-color: rgb(232, 232, 232);
+	z-index: 10;
+}
+
+.songenvcontrols {
+	display: flex;
+	align-items: center;
+	margin-right: 26px;
+}
+
+#playbardesk-mic,
+#playbardesk-queue,
+#playbardesk-devices,
+#playbardesk-volm,
+#playbardesk-pinch {
+	font-size: 21px;
+	margin: 6px;
+	font-weight: 500;
+}
+
+
+
 @media (max-width: 800px) {
 	main {
-		padding: 0px 18px;
+		padding: 0px 0px;
 	}
 	header {
 		display: none;
@@ -292,11 +439,9 @@ header {
 		margin-top: 0px;
 	}
 	.playlists {
-		margin-right: -18px;
-		margin: -10px 0px;
+		margin-top: 10px;
 	}
 	.playlistcard {
-		
 		margin-right: 20px;
 		margin-bottom: 18px;
 		padding: 15px;
@@ -306,7 +451,6 @@ header {
 	}
 	.playlistdetails {
 		font-size: 12px;
-		max-width: 145px;
 	}
 	#playlistscroll{
 		margin-left: -18px;
@@ -321,12 +465,12 @@ header {
 		display: none;
 	}
 	.wwish {
+		margin-left: 18px;
 		font-size: 20px;
 		margin-top: 50px;
 		margin-bottom: 26px;
 	}
 	.wplaylistcard {
-		max
 		height: 60px;
 	}
 	.wplaylistimg {
@@ -336,16 +480,23 @@ header {
 		display: none;
 	}
 	.wish {
+		margin-left: 18px;
 		font-size: 20px;
 	}
 	.wplaylistcard {
 		padding: 0px;
 	}
+	.wplaylistimg {
+		width: 60px;
+	}
 	.fplaylistcard {
+		margin-left: 36px;
+	}
+	.wplaylists {
 		margin-left: 18px;
 	}
-	.wplaylistimg {
-		width: 84px;
+	.wwish {
+		margin-left: 0px;
 	}
 }
 
@@ -355,12 +506,14 @@ header {
 		margin-top: 0px;
 	}
 	.playlists {
-		margin-right: -18px;
-		margin: -10px 0px;
+		margin-bottom: 10px;
+
 	}
 	.playlistcard {
+		box-shadow: none;
 		background: transparent;
 		margin-right: 20px;
+		margin-left: 0px;
 		margin-bottom: 18px;
 		padding: 0px;
 	}
@@ -369,15 +522,9 @@ header {
 		box-shadow: none;
 	}
 	.playlistdetails {
-		font-size: 14px;
-		max-width: 170px;
-	}
-	#playlistscroll{
-		margin-left: -18px;
-		margin-right: -18px;
+		font-size: 13px;
 	}
 	.abplaylistimg {
-		
 		left: 12px;
 		
 	}
@@ -417,6 +564,12 @@ header {
 	.abplaylistimg {
 		display: none;
 	}
+	.fplaylistcard {
+		margin-left: 36px;
+	}
+	.playlistcard:hover {
+		background-color: transparent;
+	}
 }
 
 @media (max-width: 500px) {
@@ -425,33 +578,29 @@ header {
 		padding-right: 0px;
 	}
 	.playlistcard {
-		width: 130px;
+		width: 156px;
 		background-color: transparent;
-		box-shadow: none;
-		margin-right: 12px;
-		height: 230px;
-	}
-	.playlistcard:hover {
-		background-color: transparent;
+		margin-right: 17px;
+		height: 240px;
 	}
 	.playlistimg {
-		width: 130px;
+		width: 150px;
 	}
 	.playlistdetails {
 		font-size: 11px;
 		width: 100%;
 	}
 	.playlistname {
-		font-size: 11px;
+		font-size: 12px;
 		width: 100%;
 		white-space: nowrap;
 		margin-top: 15px;
 		margin-bottom: 6px;
 	}
 	.wish {
-		font-size: 15px;
-		margin-top: 28px;
-		margin-bottom: 22px;
+		font-size: 16px;
+		margin-top: 10px;
+		margin-bottom: 18px;
 	}
 	.podplaylistimg {
 		border-radius: 12px;
@@ -459,20 +608,23 @@ header {
 	.wplaylists {
 		margin-top: 20px;
 	}
+	.wwish {
+		font-size: 19px;
+	}
 	.wplaylistcard {
 		width: 100%;
 		background-color: rgba(255, 255, 255, 0.071);
-		height: 44px;
+		height: 50px;
 		overflow: hidden;
 		margin-bottom: 8px;
 		overflow: hidden;
 	}
 	.wplaylistimg{
-		width: 44px;
+		width: 50px;
 		
 	}
 	.wplaylistname {
-		font-size: 10px;
+		font-size: 12px;
 		margin: 8px;
 	}
 	.wplaylistcard:hover {
@@ -482,8 +634,32 @@ header {
 		overflow-x: hidden;
 	}
 	.artistscard {
-		height: 200px;
-		margin-top: 0px;
-		margin-bottom: 0px;
+		height: 216px;
+	}
+}
+
+@media (max-width: 1030px) {
+	.songenvcontrols {
+		display: none;
+	}
+	#desktopfooter {
+		justify-content: center;
+	}
+	.albumsongdetails {
+	}
+	.timetotalbar {
+		width: 300px;
+	}
+	.timedonebar {
+		width: 90px;
+	}
+	.playcontrols {
+		flex: 1;
+	}
+}
+
+@media (max-width: 700px) {
+	#desktopfooter {
+		display: none;
 	}
 }
