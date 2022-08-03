@@ -246,11 +246,6 @@ header {
 	display: none;
 }
 
-/* .opwplaylistscard,
-.apwplaylistscard {
-	display: none;
-} */
-
 .wplaylistimg {
 	width: 84px;
 	border-radius: 0px;
@@ -560,12 +555,43 @@ header {
 	color: rgba(255, 255, 255, 0.75);
 }
 
+.buttonsmheader {
+	display: none;
+}
+
+.wwishwrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0px 18px;
+	margin-top: 40px;
+	margin-bottom: 20px;
+	margin-left: 0px;
+}
+.btnheadm {
+	font-size: 23px;
+	margin: 0px 6px;
+	position: relative;
+}
+#notimhead div {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	background-color: blue;
+	border-radius: 5px;
+	top: -2px;
+	left: 0px;
+}
 @media (max-width: 800px) {
 	main {
 		padding: 0px 0px;
 	}
 	header {
 		display: none;
+	}
+	.buttonsmheader {
+		display: flex;
 	}
 	.wplaylists{
 		margin-top: 0px;
@@ -599,8 +625,7 @@ header {
 	.wwish {
 		margin-left: 18px;
 		font-size: 20px;
-		margin-top: 50px;
-		margin-bottom: 26px;
+		
 	}
 	.wplaylistcard {
 		height: 60px;
@@ -629,6 +654,7 @@ header {
 	}
 	.wwish {
 		margin-left: 0px;
+		flex: 1;
 	}
 }
 
@@ -671,11 +697,6 @@ header {
 	.playlistplaybtn {
 		display: none;
 	}
-	.wwish {
-		font-size: 20px;
-		margin-top: 50px;
-		margin-bottom: 26px;
-	}
 	.wplaylistcard {
 		background-color: rgba(255, 255, 255, 0.071);
 		height: 60px;
@@ -709,6 +730,53 @@ header {
 	}
 	.playlistcard:hover {
 		background-color: transparent;
+	}
+	.songnamem {
+		font-size: 12px;
+	}
+	.artistnamem {
+		font-weight: 400;
+	}
+	#devicesm {
+		font-size: 22px;
+	}
+	#playm {
+		font-size: 30px;
+	}
+	.hometextm,
+	.searchtextm,
+	.libtextm {
+		font-size: 10px;
+	}
+	.wplaylistcard {
+		margin-bottom: 10px;
+		margin-right: 10px;
+	}
+	.playlistname {
+		margin-top: 12px;
+	}
+	.playlistdetails {
+		font-size: 12px;
+	}
+	.wplaylistname {
+		font-size: 12px;
+		margin: 0px;
+		margin-left: 10px;
+	}
+	.wish {
+		margin: 20px 0px;
+		margin-left: 18px;
+		font-size: 18px;
+	}
+	.wwish {
+		margin: 0px;
+	}
+	.awish {
+		margin: 10px;
+		margin-left: 18px;
+	}
+	.opapwplaylistcardwrap {
+		display: none;
 	}
 }
 
@@ -795,6 +863,9 @@ header {
 	}
 	.playcontrols {
 		flex: 1;
+	}
+	.wwish {
+		margin: 0px ;
 	}
 }
 
