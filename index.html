@@ -24,9 +24,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spotify</title>
   </head>
-  <body>
-    <main>
-      <header>
+  <body id="body">
+    <section class="sidebarwrap">
+      <div class="sidebar">
+        <img src="img/others/spotify_nav.jpg" alt="">
+        
+      </div>
+    </section>
+    <div class="toplayer"></div>
+    <main id="main">
+      <header id="header">
         <section id="backforwardnav">
           <div id="hbnav">
             <span class="material-symbols-sharp">arrow_back_ios</span>
@@ -57,7 +64,7 @@
         </div>
         <div class="wplaylistscroll">
           <div class="wplaylistcardwrap">
-            <div class="playlistcard wplaylistcard">
+            <div id="saucecolplay" class="playlistcard wplaylistcard">
               <button
                 class="playlistplaybtn wplaylistplaybtn material-symbols-sharp"
               >
@@ -70,7 +77,7 @@
               />
               <span class="playlistname wplaylistname">Pop Sauce</span>
             </div>
-            <div class="playlistcard wplaylistcard">
+            <div id="olplaypink" class="playlistcard wplaylistcard">
               <button
                 class="playlistplaybtn wplaylistplaybtn material-symbols-sharp"
               >
@@ -83,7 +90,7 @@
               />
               <span class="playlistname wplaylistname">Olivia Rodrigo</span>
             </div>
-            <div class="playlistcard wplaylistcard apwplaylistcard">
+            <div id="polpodyell" class="playlistcard wplaylistcard apwplaylistcard">
               <button
                 class="playlistplaybtn wplaylistplaybtn material-symbols-sharp"
               >
@@ -98,7 +105,7 @@
             </div>
           </div>
           <div class="wplaylistcardwrap">
-            <div class="playlistcard wplaylistcard">
+            <div id="taycolplay" class="playlistcard wplaylistcard">
               <button
                 class="playlistplaybtn wplaylistplaybtn material-symbols-sharp"
               >
@@ -111,7 +118,7 @@
               />
               <span class="playlistname wplaylistname">1989</span>
             </div>
-            <div class="playlistcard wplaylistcard">
+            <div id="poprockred" class="playlistcard wplaylistcard">
               <button
                 class="playlistplaybtn wplaylistplaybtn material-symbols-sharp"
               >
@@ -126,7 +133,7 @@
                 >10s Pop Rock</span
               >
             </div>
-            <div class="playlistcard wplaylistcard opwplaylistcard">
+            <div id="ecopodred" class="playlistcard wplaylistcard opwplaylistcard">
               <button
                 class="playlistplaybtn wplaylistplaybtn material-symbols-sharp"
               >
@@ -140,34 +147,7 @@
               <span class="playlistname wplaylistname">The Economist</span>
             </div>
           </div>
-          <div class="wplaylistcardwrap opapwplaylistcardwrap">
-            <div class="playlistcard wplaylistcard">
-              <button
-                class="playlistplaybtn wplaylistplaybtn material-symbols-sharp"
-              >
-                play_arrow
-              </button>
-              <img
-                class="playlistimg wplaylistimg"
-                src="img/podcasts/vox_politics.jpg"
-                alt=""
-              />
-              <span class="playlistname wplaylistname">Politics</span>
-            </div>
-            <div class="playlistcard wplaylistcard">
-              <button
-                class="playlistplaybtn wplaylistplaybtn material-symbols-sharp"
-              >
-                play_arrow
-              </button>
-              <img
-                class="playlistimg wplaylistimg"
-                src="img/podcasts/the_economist.jpg"
-                alt=""
-              />
-              <span class="playlistname wplaylistname">The Economist</span>
-            </div>
-          </div>
+          
         </div>
       </section>
 
@@ -666,8 +646,17 @@
     </main>
     <section id="desktopfooter">
       <div class="albumsongdetails">
-        <div class="coverpic">
-          <img src="img/playlist/1989_swift.jpg" alt="">
+        <div id="albumimgcard">
+          <div id="downarrowalbum">
+            <span class="material-symbols-sharp">arrow_forward_ios</span>
+          </div>
+            <img src="img/artists/taylor_swift.jpg" alt="">
+          </div>
+        <div id="footeralbumimg" class="coverpic">
+          <div id="uparrowalbum">
+            <span class="material-symbols-sharp">arrow_forward_ios</span>
+          </div>
+          <img class="coverpicimg" src="img/artists/taylor_swift.jpg" alt="">
         </div>
         <div class="songnameartist">
           <span class="songname">All Too Well</span>
@@ -717,6 +706,7 @@
         </div>
         <div class="progressbartotal">
           <div class="progressbardone"></div>
+          <!-- <input type="range" min="0" max="100" value="0" id="" class="progressbardone"> -->
         </div>
       </div>
       <div class="footernav">
@@ -730,7 +720,7 @@
         </div>
         <div class="libnav">
           <span class="material-symbols-rounded libnavm">queue_music</span>
-          <span class="libtextm">Your Library</span>
+          <span class="libtextm">Library</span>
         </div>
       </div>
     </section>
