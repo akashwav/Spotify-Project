@@ -19,32 +19,67 @@ img {
 }
 
 ::-webkit-scrollbar-thumb {
-	background-color: rgba(255, 255, 255, 0.5);
+	background: transparent;
+}
+
+.sidebarwrap {
+	position: fixed;
+	background-color: black;
+	top: 0px;
+	bottom: 90px;
+	left: 0;
+	width: 150px;
+	padding: 20px 10px;
+}
+
+.sidebar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.sidebar img {
+	width: 130px;
 }
 
 body {
-	background: rgb(22, 22, 22);
+	/* background: rgb(25, 25, 25); */
 	color: white;
+	background-image: linear-gradient(rgb(25, 25, 25), rgb(25, 25, 25),  rgb(25, 25, 25), rgb(25, 25, 25), rgb(25, 25, 25), rgb(25, 25, 25), rgb(25, 25, 25));
 	margin-bottom: 160px;
 	overflow-x: hidden;
+	position: relative;
+}
+
+.toplayer {
+	position: absolute;
+	top: -100px;
+	left: 0px;
+	right: 0px;
+	height: 400px;
+	width: 100%;
+	background: rgb(25, 25, 25, 0.750);
+	z-index: -1;
 }
 
 
 main {
 	padding: 0px 26px;
+	margin-left: 170px;
 }
 
 header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 20px 26px;
+	padding: 14px 26px;
 	position: fixed;
+	margin-left: 170px;
 	top: 0px;
 	right: 0px;
 	left: 0px;
-	z-index: 10;
-	background-color: rgb(18, 18, 18);
+	z-index: 16;
+	background: transparent;
 }
 
 #backforwardnav {
@@ -53,20 +88,38 @@ header {
 	align-items: center;
 }
 
+#albumimgcard {
+	display: none;
+	position: absolute;
+	top: -198px;
+	left: -14px;
+}
+
+#albumimgcard img {
+	width: 170px;
+}
+
+#uparrowalbum,
+#downarrowalbum,
 #hfnav,
 #hbnav {
 	cursor: not-allowed;
-	width: 32px;
-	height: 32px;
+	width: 30px;
+	height: 30px;
 	align-items: center;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	font-size: 16px;
 	text-align: center;
 	padding: 2px;
 	border-radius: 50%;
 	background-color: rgb(0, 0, 0);
+}
+
+#hfnav span,
+#hbnav span {
+	font-size: 18px;
+
 }
 
 #hbnav span {
@@ -75,6 +128,42 @@ header {
 
 #hfnav {
 	margin-left: 12px;
+}
+
+#uparrowalbum,
+#downarrowalbum {
+	transform: rotate(90deg);
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 26px;
+	height: 26px;
+	display: none;
+	cursor: pointer;
+}
+
+#uparrowalbum {
+	transform: rotate(270deg);
+	width: 18px;
+	height: 18px;
+	top: 5px;
+	right: 5px;
+}
+
+#downarrowalbum span {
+	font-size: 18px;
+}
+
+#uparrowalbum span {
+	font-size: 12px;
+}
+
+.coverpic:hover #uparrowalbum {
+	display: flex;
+}
+
+#albumimgcard:hover #downarrowalbum {
+	display: flex;
 }
 
 #headerpmenuwrap {
@@ -107,6 +196,7 @@ header {
 
 .playlists {
 	margin: 40px 0px;
+	z-index: 10;
 }
 
 #playlistscroll::-webkit-scrollbar {
@@ -115,7 +205,7 @@ header {
 }
 
 .wplaylists {
-	margin-top: 120px;
+	margin-top: 100px;
 }
 
 #playlistscroll {
@@ -135,6 +225,7 @@ header {
 	font-size: 22px;
 	font-weight: 700;
 	margin: 30px 0px;
+	z-index: 6;
 }
 
 .playlistcard {
@@ -144,6 +235,7 @@ header {
 	position: relative;
 	padding: 16px;
 	cursor: pointer;
+	
 	width: 180px;
 	height: 280px;
 	box-shadow: 0px 0px 6px rgba(24, 24, 24, 0.3);
@@ -209,19 +301,33 @@ header {
 	right: 30px;
 }
 
+.looo {
+	background-color: rgb(23, 172, 75);
+	background-color: rgb(225, 109, 120);
+}
+
 .playlistplaybtn:hover {
 	width: 50px;
 	height: 50px;
 	transition: none;
 }
 
+
+
 .wplaylistcardwrap {
 	display: flex;
 	flex-direction: row;
 }
+
+#polpodyell,
+#ecopodred {
+	margin-right: 0px;
+}
+
 .wwish {
 	font-size: 28px;
-	margin-bottom: 40px;
+	margin: 0px;
+	z-index: 10;
 }
 
 
@@ -233,7 +339,8 @@ header {
 .wplaylistcard {
 	flex-direction: row;
 	align-items: center;
-	height: 84px;
+	overflow: hidden;
+	height: 76px;
 	border-radius: 5px;
 	flex-grow: 1;
 	max-width: 360px;
@@ -247,7 +354,8 @@ header {
 }
 
 .wplaylistimg {
-	width: 84px;
+	width: auto;
+	height: 100%;
 	border-radius: 0px;
 	border-top-left-radius: 2px;
 	border-bottom-left-radius: 2px;
@@ -303,12 +411,14 @@ header {
 .albumsongdetails {
 	display: flex;
 	align-items: center;
+	position: relative;
 }
 
 .coverpic {
 	display: flex;
 	align-items: center;
 	margin-right: 14px;
+	position: relative;
 }
 
 .coverpic img{
@@ -381,6 +491,8 @@ header {
 	padding: 4px;
 	border-radius: 50px;
 }
+
+
 
 .songdurationbar {
 	display: flex;
@@ -566,7 +678,7 @@ header {
 	justify-content: space-between;
 	margin: 0px 18px;
 	margin-top: 40px;
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	margin-left: 0px;
 }
 .btnheadm {
@@ -583,11 +695,57 @@ header {
 	top: -2px;
 	left: 0px;
 }
+
+
+
+@media (max-width: 1030px) {
+	.songenvcontrols {
+		display: none;
+	}
+	#desktopfooter {
+		justify-content: space-between;
+	}
+	.timetotalbar {
+		width: 300px;
+	}
+	.timedonebar {
+		width: 90px;
+	}
+	.playcontrols {
+		margin-right: 50px;
+	}
+	.wwish {
+		margin: 0px ;
+	}
+	.wplaylistcard {
+		height: 66px;
+	}
+	.wplaylistname {
+		font-size: 14px;
+	}
+	#polpodyell,
+	#ecopodred {
+		display: none;
+	}
+	#olplaypink,
+	#poprockred {
+		margin-right: 0px;
+	}
+	
+}
+
 @media (max-width: 800px) {
 	main {
 		padding: 0px 0px;
+		margin-left: 0px;
+	}
+	body {
+		margin-left: 0px;
 	}
 	header {
+		display: none;
+	}
+	.sidebarwrap {
 		display: none;
 	}
 	.buttonsmheader {
@@ -630,9 +788,6 @@ header {
 	.wplaylistcard {
 		height: 60px;
 	}
-	.wplaylistimg {
-		width: 60px;
-	}
 	.wplaylistplaybtn {
 		display: none;
 	}
@@ -643,9 +798,6 @@ header {
 	.wplaylistcard {
 		padding: 0px;
 	}
-	.wplaylistimg {
-		width: 60px;
-	}
 	.fplaylistcard {
 		margin-left: 36px;
 	}
@@ -655,6 +807,14 @@ header {
 	.wwish {
 		margin-left: 0px;
 		flex: 1;
+	}
+}
+@media (max-width: 700px) {
+	#desktopfooter {
+		display: none;
+	}
+	#mobilefooter {
+		display: flex;
 	}
 }
 
@@ -700,9 +860,6 @@ header {
 	.wplaylistcard {
 		background-color: rgba(255, 255, 255, 0.071);
 		height: 60px;
-	}
-	.wplaylistimg {
-		width: 60px;
 	}
 	.wplaylistplaybtn {
 		display: none;
@@ -779,101 +936,70 @@ header {
 		display: none;
 	}
 }
-
 @media (max-width: 470px) {
-	
-	main {
-		padding-right: 0px;
-	}
-	.playlistcard {
-		width: 156px;
-		background-color: transparent;
-		margin-right: 17px;
-		height: 240px;
-	}
-	.playlistimg {
-		width: 150px;
-	}
-	.playlistdetails {
-		font-size: 11px;
-		width: 100%;
-	}
-	.playlistname {
-		font-size: 12px;
-		width: 100%;
-		white-space: nowrap;
-		margin-top: 15px;
-		margin-bottom: 6px;
-	}
-	.wish {
-		font-size: 16px;
-		margin-top: 10px;
-		margin-bottom: 18px;
-	}
-	.podplaylistimg {
-		border-radius: 12px;
-	}
-	.wplaylists {
-		margin-top: 20px;
-	}
-	.wwish {
-		font-size: 19px;
-	}
-	.wplaylistcard {
-		width: 100%;
-		background-color: rgba(255, 255, 255, 0.071);
-		height: 50px;
-		overflow: hidden;
-		margin-bottom: 8px;
-		overflow: hidden;
-	}
-	.wplaylistimg{
-		width: 50px;
 		
+		main {
+			padding-right: 0px;
+		}
+		.playlistcard {
+			width: 156px;
+			background-color: transparent;
+			margin-right: 17px;
+			height: 240px;
+		}
+		.playlistdetails {
+			font-size: 11px;
+			width: 100%;
+		}
+		.playlistname {
+			font-size: 12px;
+			width: 100%;
+			white-space: nowrap;
+			margin-top: 15px;
+			margin-bottom: 6px;
+		}
+		.wish {
+			font-size: 16px;
+			margin-top: 10px;
+			margin-bottom: 18px;
+		}
+		.podplaylistimg {
+			border-radius: 12px;
+		}
+		.wplaylists {
+			margin-top: 20px;
+		}
+		.wwish {
+			font-size: 19px;
+		}
+		.playlistimg {
+			width: 150px;
+		}
+		.wplaylistimg {
+			width: auto;
+		}
+		.wplaylistname {
+			font-size: 1px;
+		}
+		.wplaylistcard {
+			width: 100%;
+			background-color: rgba(255, 255, 255, 0.071);
+			height: 50px;
+			overflow: hidden;
+			margin-bottom: 8px;
+			overflow: hidden;
+		}
+		.wplaylistname {
+			font-size: 12px;
+			margin: 8px;
+		}
+		.wplaylistcard:hover {
+			background-color: rgba(255, 255, 255, 0.071);
+		}
+		.playlists {
+			overflow-x: hidden;
+		}
+		.artistscard {
+			height: 216px;
+		}
 	}
-	.wplaylistname {
-		font-size: 12px;
-		margin: 8px;
-	}
-	.wplaylistcard:hover {
-		background-color: rgba(255, 255, 255, 0.071);
-	}
-	.playlists {
-		overflow-x: hidden;
-	}
-	.artistscard {
-		height: 216px;
-	}
-}
-
-@media (max-width: 1030px) {
-	.songenvcontrols {
-		display: none;
-	}
-	#desktopfooter {
-		justify-content: center;
-	}
-	.albumsongdetails {
-	}
-	.timetotalbar {
-		width: 300px;
-	}
-	.timedonebar {
-		width: 90px;
-	}
-	.playcontrols {
-		flex: 1;
-	}
-	.wwish {
-		margin: 0px ;
-	}
-}
-
-@media (max-width: 700px) {
-	#desktopfooter {
-		display: none;
-	}
-	#mobilefooter {
-		display: flex;
-	}
-}
