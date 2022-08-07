@@ -67,15 +67,3 @@ downarrow.addEventListener('click', function falbumcardToggle() {
 	falbumcard.style.display = 'none';
 })
 
-let playpauseToggle = document.getElementById('playbardesk-pause');
-let countf = 1;
-
-playpauseToggle.addEventListener('click', function playToggle() {
-	countf++;
-	if (countf % 2 == 0) {
-		playpauseToggle.innerText = 'play_arrow';
-	}
-	if (countf % 2 != 0) {
-		playpauseToggle.innerText = 'pause';
-	}
-})
