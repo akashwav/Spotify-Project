@@ -27,7 +27,7 @@
   <body id="body">
     <section class="sidebarwrap">
       <div class="sidebar">
-        <img src="img/others/spotify_nav.jpg" alt="">
+        <img src="img/others/spotify_nav.png" alt="">
         
       </div>
     </section>
@@ -222,7 +222,7 @@
       <section class="playlists">
         <p class="wish">Episodes For You</p>
         <div id="playlistscroll">
-          <div class="playlistcard fplaylistcard">
+          <div class="playlistcard fplaylistcard podplaylistcard">
             <button class="playlistplaybtn material-symbols-sharp">
               play_arrow
             </button>
@@ -238,7 +238,7 @@
               July 18 &middot; 19 Min</span
             >
           </div>
-          <div class="playlistcard">
+          <div class="playlistcard podplaylistcard">
             <button class="playlistplaybtn material-symbols-sharp">
               play_arrow
             </button>
@@ -258,7 +258,7 @@
               July 18 &middot; 45 Min</span
             >
           </div>
-          <div class="playlistcard">
+          <div class="playlistcard podplaylistcard">
             <button class="playlistplaybtn material-symbols-sharp">
               play_arrow
             </button>
@@ -275,12 +275,12 @@
             <span class="playlistname">Popular Science</span>
             <span class="playlistdetails">July 20 &middot; 30 Min</span>
           </div>
-          <div class="playlistcard">
+          <div class="playlistcard podplaylistcard">
             <button class="playlistplaybtn material-symbols-sharp">
               play_arrow
             </button>
             <img
-              class="playlistimg"
+              class="playlistimg  podplaylistimg"
               src="img/podcasts/vox_unexplainable.jpg"
               alt=""
             />
@@ -292,11 +292,11 @@
             <span class="playlistname">Unexplainable</span>
             <span class="playlistdetails">July 22 &middot; 25 Min</span>
           </div>
-          <div class="playlistcard">
+          <div class="playlistcard podplaylistcard">
             <button class="playlistplaybtn material-symbols-sharp">
               play_arrow
             </button>
-            <img class="playlistimg" src="img/podcasts/waveform.jpg" alt="" />
+            <img class="playlistimg  podplaylistimg" src="img/podcasts/waveform.jpg" alt="" />
             <img
               class="playlistimg abplaylistimg"
               src="img/podcasts/waveform.jpg"
@@ -656,10 +656,10 @@
           <div id="uparrowalbum">
             <span class="material-symbols-sharp">arrow_forward_ios</span>
           </div>
-          <img class="coverpicimg" src="img/artists/taylor_swift.jpg" alt="">
+          <img class="coverpicimg" src="img/playlist/1989_swift.jpg" alt="">
         </div>
         <div class="songnameartist">
-          <span class="songname">All Too Well</span>
+          <span class="songname">Shake It Off</span>
           <span class="songartist">Taylor Swift</span>
         </div>
         <span id="playbardesk-fav" class="material-symbols-rounded">favorite</span>
@@ -668,17 +668,15 @@
       <div class="playcontrols">
         <div class="maincontrols">
           <span id="playbardesk-shuffle" class="material-symbols-rounded">shuffle</span>
-          <span id="playbardesk-prev" class="material-symbols-rounded">skip_previous</span>
-          <span id="playbardesk-pause" class="material-symbols-rounded">pause</span>
-          <span id="playbardesk-next" class="material-symbols-rounded">skip_next</span>
+          <span id="previous" class="playbardesk-prev material-symbols-rounded">skip_previous</span>
+          <span id="playbtn" class="playbardesk-pause material-symbols-rounded">play_arrow</span>
+          <span id="next" class="playbardesk-next material-symbols-rounded">skip_next</span>
           <span id="playbardesk-repeat" class="material-symbols-rounded">repeat</span>
         </div>
         <div class="songdurationbar">
-          <span class="timedone">2:01</span>
-          <div class="timetotalbar">
-            <div class="timedonebar"></div>
-          </div>
-          <span class="timetotal">3:20</span>
+          <span id="currentTime" class="timedone">0:00</span>
+          <input type="range" min="0" max="100" value="0" step="1" id="progressBar" class="timetotalbar">
+          <span id="duration" class="timetotal">3:39</span>
         </div>
       </div>
       <div class="songenvcontrols">
@@ -696,7 +694,7 @@
           <img src="img/playlist/sour_album.jpg" alt="">
         </div>
         <div class="artistnamesong">
-          <span class="songnamem">good 4 u</span>
+          <span class="songnamem">drivers license</span>
           <span class="artistnamem">Olivia Rodrigo</span>
         </div>
         <div class="playbarcontrols">
@@ -704,10 +702,10 @@
           <span class="material-symbols-rounded" id="favm">favorite</span>
           <span class="material-symbols-rounded" id="playm">play_arrow</span>
         </div>
-        <div class="progressbartotal">
-          <div class="progressbardone"></div>
-          <!-- <input type="range" min="0" max="100" value="0" id="" class="progressbardone"> -->
-        </div>
+        <!-- <div class="progressbartotal">
+          <div id="progressbardone"></div>
+        </div> -->
+        <input type="range" name="" max="100" min="0" value="0" id="progressbartotal">
       </div>
       <div class="footernav">
         <div class="homenav">
@@ -725,5 +723,6 @@
       </div>
     </section>
     <script src="js/main.js"></script>
+    <script src="js/songsenv.js"></script>
   </body>
 </html>
