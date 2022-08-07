@@ -45,8 +45,8 @@ img {
 body {
 	/* background: rgb(25, 25, 25); */
 	color: white;
-	background-image: linear-gradient(rgb(25, 25, 25), rgb(25, 25, 25),  rgb(25, 25, 25), rgb(25, 25, 25), rgb(25, 25, 25), rgb(25, 25, 25), rgb(25, 25, 25));
-	margin-bottom: 160px;
+	background-image: linear-gradient(rgb(25, 25, 25), rgb(25, 25, 25), rgb(25, 25, 25), rgb(25, 25, 25), rgb(25, 25, 25), rgb(25, 25, 25), rgb(25, 25, 25));
+	margin-bottom: 120px;
 	overflow-x: hidden;
 	position: relative;
 }
@@ -235,7 +235,7 @@ header {
 	position: relative;
 	padding: 16px;
 	cursor: pointer;
-	
+
 	width: 180px;
 	height: 280px;
 	box-shadow: 0px 0px 6px rgba(24, 24, 24, 0.3);
@@ -371,7 +371,7 @@ header {
 	position: absolute;
 	top: 18px;
 	left: 286px;
-	
+
 }
 
 .wplaylistcard:hover {
@@ -421,7 +421,7 @@ header {
 	position: relative;
 }
 
-.coverpic img{
+.coverpic img {
 	width: 60px;
 }
 
@@ -432,13 +432,13 @@ header {
 }
 
 .songname {
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: 500;
-	margin-bottom: 2px;
+	margin-bottom: 4px;
 }
 
 .songartist {
-	font-size: 11px;
+	font-size: 10px;
 	font-weight: 400;
 	color: rgba(255, 255, 255, 0.8);
 }
@@ -454,7 +454,7 @@ header {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	
+
 }
 
 .maincontrols {
@@ -464,9 +464,9 @@ header {
 }
 
 #playbardesk-shuffle,
-#playbardesk-prev,
-#playbardesk-pause,
-#playbardesk-next,
+.playbardesk-prev,
+.playbardesk-pause,
+.playbardesk-next,
 #playbardesk-repeat {
 	font-size: 26px;
 	margin: 0px 10px;
@@ -478,13 +478,13 @@ header {
 	font-size: 24px;
 }
 
-#playbardesk-prev,
-#playbardesk-next {
+.playbardesk-prev,
+.playbardesk-next {
 	color: rgba(255, 255, 255, 0.869);
 	font-weight: 600;
 }
 
-#playbardesk-pause {
+.playbardesk-pause {
 	background-color: white;
 	color: black;
 	font-weight: 500;
@@ -509,22 +509,10 @@ header {
 
 
 .timetotalbar {
-	position: relative;
-	width: 420px;
+	width: 450px;
 	height: 4px;
 	border-radius: 3px;
-	background-color: rgb(123, 123, 123);
-}
-
-.timedonebar {
-	position: absolute;
-	width: 180px;
-	height: 4px;
-	top: 0px;
-	left: 0px;
-	border-radius: 3px;
-	background-color: rgb(232, 232, 232);
-	z-index: 10;
+	background-color: black;
 }
 
 .songenvcontrols {
@@ -550,7 +538,7 @@ header {
 	left: 0px;
 	right: 0px;
 	position: fixed;
-	background-image: linear-gradient(rgba(0,0,0,0.0), rgba(0,0,0,0.7), rgba(0,0,0,0.7), rgba(0,0,0,0.7), rgba(0,0,0,0.9), rgba(0,0,0,0.9), rgba(0,0,0,0.9), rgba(0,0,0,1), rgba(0,0,0,1));
+	background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 1), rgba(0, 0, 0, 1));
 }
 
 
@@ -565,7 +553,7 @@ header {
 	margin: 0px 10px;
 	position: relative;
 	margin-bottom: 4px;
-	background-color: rgba(60,56,92, 1);
+	background-color: rgba(60, 56, 92, 1);
 }
 
 .songimg {
@@ -593,7 +581,7 @@ header {
 
 .artistnamem {
 	font-size: 12px;
-	font-weight: 500;
+	font-weight: 400;
 	color: rgba(255, 255, 255, 0.832);
 }
 
@@ -615,7 +603,7 @@ header {
 	margin: 0px 2px;
 }
 
-.progressbartotal {
+#progressbartotal {
 	position: absolute;
 	height: 2px;
 	background-color: rgba(255, 255, 255, 0.5);
@@ -624,17 +612,18 @@ header {
 	border-radius: 3px;
 }
 
-.progressbardone {
-	height: 2px;
-	background-color: rgba(255, 255, 255, 0.8);
-	bottom: 0;
-	width: 20%;
+#progressbartotal::-webkit-slider-thumb {
+	-webkit-appearance: none;
+  	-moz-appearance: none;
+	width: 0;
+	height: 0;
 }
 
 .footernav {
 	display: flex;
 	justify-content: space-evenly;
 	padding: 10px 14px;
+	padding-bottom: 16px;
 }
 
 .homenav,
@@ -648,9 +637,13 @@ header {
 .homenavm,
 .searchnavm,
 .libnavm {
-	font-size: 28px;
+	font-size: 30px;
 	font-size: 500;
 	margin-bottom: 4px;
+}
+
+.homenavm {
+	font-weight: 600;
 }
 
 .hometextm,
@@ -681,11 +674,13 @@ header {
 	margin-bottom: 30px;
 	margin-left: 0px;
 }
+
 .btnheadm {
 	font-size: 23px;
 	margin: 0px 6px;
 	position: relative;
 }
+
 #notimhead div {
 	position: absolute;
 	width: 10px;
@@ -702,36 +697,45 @@ header {
 	.songenvcontrols {
 		display: none;
 	}
+
 	#desktopfooter {
 		justify-content: space-between;
 	}
+
 	.timetotalbar {
 		width: 300px;
 	}
+
 	.timedonebar {
 		width: 90px;
 	}
+
 	.playcontrols {
 		margin-right: 50px;
 	}
+
 	.wwish {
-		margin: 0px ;
+		margin: 0px;
 	}
+
 	.wplaylistcard {
 		height: 66px;
 	}
+
 	.wplaylistname {
 		font-size: 14px;
 	}
+
 	#polpodyell,
 	#ecopodred {
 		display: none;
 	}
+
 	#olplaypink,
 	#poprockred {
-		margin-right: 0px;
+		margin-right: 12px;
 	}
-	
+
 }
 
 @media (max-width: 800px) {
@@ -739,82 +743,119 @@ header {
 		padding: 0px 0px;
 		margin-left: 0px;
 	}
+
 	body {
 		margin-left: 0px;
 	}
+
 	header {
 		display: none;
 	}
+
 	.sidebarwrap {
 		display: none;
 	}
+
 	.buttonsmheader {
 		display: flex;
 	}
-	.wplaylists{
+
+	.wplaylists {
 		margin-top: 0px;
 	}
+
 	.playlists {
 		margin-top: 10px;
 	}
+
 	.playlistcard {
 		margin-right: 20px;
-		margin-bottom: 18px;
+		margin-bottom: 12px;
 		padding: 15px;
 	}
+	.toplayer {
+		height: 450px;
+	}
+
 	.playlistname {
 		font-size: 14px;
 	}
+
 	.playlistdetails {
 		font-size: 12px;
 	}
-	#playlistscroll{
+
+	#playlistscroll {
 		margin-left: -18px;
-		margin-right: -18px;
+		margin-right: -6px;
 	}
+
 	.abplaylistimg {
-		
+
 		left: 12px;
-		
+
 	}
-	.playlistplaybtn {
-		display: none;
-	}
+
+	
+
 	.wwish {
 		margin-left: 18px;
 		font-size: 20px;
-		
+
 	}
+
 	.wplaylistcard {
 		height: 60px;
 	}
+
 	.wplaylistplaybtn {
 		display: none;
 	}
+
 	.wish {
 		margin-left: 18px;
 		font-size: 20px;
 	}
+
 	.wplaylistcard {
 		padding: 0px;
 	}
+
 	.fplaylistcard {
 		margin-left: 36px;
 	}
+
 	.wplaylists {
 		margin-left: 18px;
 	}
+
 	.wwish {
 		margin-left: 0px;
 		flex: 1;
 	}
 }
+
 @media (max-width: 700px) {
 	#desktopfooter {
 		display: none;
 	}
+
 	#mobilefooter {
 		display: flex;
+	}
+	#progressbartotal::-webkit-slider-thumb {
+		opacity: 0;
+	}
+
+	.playbarmobile {
+		height: 46px;
+		border-radius: 7px;
+
+	}
+
+	.songimg img {
+		width: 46px;
+		border-radius: 4px;
 	}
 }
 
@@ -822,184 +863,246 @@ header {
 	.opapwplaylistcardwrap {
 		display: flex;
 	}
-	
+
 	.opwplaylistcard,
 	.apwplaylistcard {
 		display: none;
 	}
-	.wplaylists{
+
+	.wplaylists {
 		width: auto;
 		margin-top: 0px;
 	}
+
 	.playlists {
 		margin-bottom: 10px;
 
 	}
+
 	.playlistcard {
 		box-shadow: none;
 		background: transparent;
-		margin-right: 20px;
+		margin-right: 18px;
 		margin-left: 0px;
-		margin-bottom: 18px;
+		margin-bottom: 0px;
 		padding: 0px;
 	}
-	.playlistimg  {
+
+	.playlistimg {
 		border-radius: 0px;
 		box-shadow: none;
 	}
+
 	.playlistdetails {
 		font-size: 13px;
 	}
+
 	.abplaylistimg {
 		left: 12px;
-		
+
 	}
+
 	.playlistplaybtn {
 		display: none;
 	}
+
 	.wplaylistcard {
 		background-color: rgba(255, 255, 255, 0.071);
 		height: 60px;
 	}
+
 	.wplaylistplaybtn {
 		display: none;
 	}
+
 	.wish {
 		font-size: 20px;
-		
+
 	}
+
 	.artistscard {
 		justify-content: center;
 		align-items: center;
 		text-align: center;
 	}
+
 	.artistimg {
 		border-radius: 100px;
 	}
+
 	.wplaylistcard {
 		padding: 0px;
 	}
+
 	.abplaylistimg {
 		display: none;
 	}
+
 	.fplaylistcard {
 		margin-left: 36px;
 	}
+
 	.playlistcard:hover {
 		background-color: transparent;
+	}
+	.wplaylistcard:hover {
+		background-color: rgb(255, 255, 255, 0.07);
 	}
 	.songnamem {
 		font-size: 12px;
 	}
+
 	.artistnamem {
 		font-weight: 400;
 	}
+
 	#devicesm {
 		font-size: 22px;
 	}
+
 	#playm {
 		font-size: 30px;
 	}
+
 	.hometextm,
 	.searchtextm,
 	.libtextm {
-		font-size: 10px;
+		font-size: 9px;
 	}
+
 	.wplaylistcard {
 		margin-bottom: 10px;
 		margin-right: 10px;
 	}
+
 	.playlistname {
 		margin-top: 12px;
 	}
+
 	.playlistdetails {
 		font-size: 12px;
 	}
+
 	.wplaylistname {
-		font-size: 12px;
+		font-size: 13px;
 		margin: 0px;
 		margin-left: 10px;
 	}
+
 	.wish {
 		margin: 20px 0px;
 		margin-left: 18px;
 		font-size: 18px;
 	}
+	.wwishwrapper {
+		margin-bottom: 20px;
+		margin-top: 36px;
+	}
 	.wwish {
 		margin: 0px;
 	}
+
 	.awish {
 		margin: 10px;
 		margin-left: 18px;
 	}
+
 	.opapwplaylistcardwrap {
 		display: none;
 	}
-}
-@media (max-width: 470px) {
-		
-		main {
-			padding-right: 0px;
-		}
-		.playlistcard {
-			width: 156px;
-			background-color: transparent;
-			margin-right: 17px;
-			height: 240px;
-		}
-		.playlistdetails {
-			font-size: 11px;
-			width: 100%;
-		}
-		.playlistname {
-			font-size: 12px;
-			width: 100%;
-			white-space: nowrap;
-			margin-top: 15px;
-			margin-bottom: 6px;
-		}
-		.wish {
-			font-size: 16px;
-			margin-top: 10px;
-			margin-bottom: 18px;
-		}
-		.podplaylistimg {
-			border-radius: 12px;
-		}
-		.wplaylists {
-			margin-top: 20px;
-		}
-		.wwish {
-			font-size: 19px;
-		}
-		.playlistimg {
-			width: 150px;
-		}
-		.wplaylistimg {
-			width: auto;
-		}
-		.wplaylistname {
-			font-size: 1px;
-		}
-		.wplaylistcard {
-			width: 100%;
-			background-color: rgba(255, 255, 255, 0.071);
-			height: 50px;
-			overflow: hidden;
-			margin-bottom: 8px;
-			overflow: hidden;
-		}
-		.wplaylistname {
-			font-size: 12px;
-			margin: 8px;
-		}
-		.wplaylistcard:hover {
-			background-color: rgba(255, 255, 255, 0.071);
-		}
-		.playlists {
-			overflow-x: hidden;
-		}
-		.artistscard {
-			height: 216px;
-		}
+	.podplaylistcard {
+		height: 270px;
 	}
+}
+
+@media (max-width: 470px) {
+
+	main {
+		padding-right: 0px;
+	}
+	
+	.playlistcard {
+		width: 156px;
+		background-color: transparent;
+		margin-right: 16px;
+		height: 260px;
+	}
+
+	.wwishwrapper {
+		margin-top: 0px;
+		margin-bottom: 4px;
+	}
+
+	.wplaylistcard {
+		margin-right: 10px;
+		border-radius: 3px;
+	}
+
+	.playlistdetails {
+		font-size: 11px;
+		width: 100%;
+	}
+
+	.playlistname {
+		font-size: 12px;
+		width: 100%;
+		white-space: nowrap;
+		margin-top: 15px;
+		margin-bottom: 6px;
+	}
+
+	.wish {
+		font-size: 16px;
+		margin-top: 10px;
+		margin-bottom: 18px;
+	}
+
+	.podplaylistimg {
+		border-radius: 12px;
+	}
+
+	.wplaylists {
+		margin-top: 20px;
+	}
+
+	.wwish {
+		font-size: 19px;
+	}
+
+	.playlistimg {
+		width: 150px;
+	}
+
+	.wplaylistimg {
+		width: auto;
+	}
+
+	.wplaylistcard {
+		width: 100%;
+		background-color: rgba(255, 255, 255, 0.071);
+		height: 50px;
+		overflow: hidden;
+		margin-bottom: 8px;
+		overflow: hidden;
+	}
+
+	.wplaylistname {
+		font-size: 11px;
+		margin: 12px;
+	}
+
+	.wplaylistcard:hover {
+		background-color: rgba(255, 255, 255, 0.071);
+	}
+
+	.playlists {
+		overflow-x: hidden;
+	}
+
+	.artistscard {
+		height: 216px;
+	}
+	.podplaylistcard {
+		height: 240px;
+	}
+}
